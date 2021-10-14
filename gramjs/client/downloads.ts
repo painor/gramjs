@@ -1,10 +1,10 @@
-import { Api } from "../tl";
-import type { TelegramClient } from "./TelegramClient";
-import { getAppropriatedPartSize, strippedPhotoToJpg } from "../Utils";
-import { sleep } from "../Helpers";
-import { Message } from "../tl/patched";
-import { EntityLike } from "../define";
-import { errors, utils } from "../";
+import { Api } from "../tl/mod.ts";
+import type { TelegramClient } from "./TelegramClient.ts";
+import { getAppropriatedPartSize, strippedPhotoToJpg } from "../Utils.ts";
+import { sleep } from "../Helpers.ts";
+import { Message } from "../tl/patched/mod.ts";
+import { EntityLike } from "../define.d.ts";
+import { errors, utils } from "../mod.ts";
 
 /**
  * progress callback that will be called each time a new chunk is downloaded.

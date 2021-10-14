@@ -1,6 +1,6 @@
-export { MTProtoPlainSender } from "./MTProtoPlainSender";
-export { doAuthentication } from "./Authenticator";
-export { MTProtoSender } from "./MTProtoSender";
+export { MTProtoPlainSender } from "./MTProtoPlainSender.ts";
+export { doAuthentication } from "./Authenticator.ts";
+export { MTProtoSender } from "./MTProtoSender.ts";
 
 interface states {
     disconnected: -1;

@@ -1,6 +1,6 @@
 import { Parser } from "htmlparser2";
 import { Handler } from "htmlparser2/lib/Parser";
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 import { helpers } from "../index";
 
 class HTMLToTelegramParser implements Handler {

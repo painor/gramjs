@@ -1,10 +1,19 @@
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 import { Message } from "../tl/custom/message";
 
 import { TelegramClient } from "./TelegramClient";
-import { generateRandomBytes, readBigIntFromBuffer, sleep } from "../Helpers";
-import { getAppropriatedPartSize } from "../Utils";
-import { EntityLike, FileLike, MarkupLike, MessageIDLike } from "../define";
+import {
+    generateRandomBytes,
+    readBigIntFromBuffer,
+    sleep,
+} from "../Helpers.ts";
+import { getAppropriatedPartSize } from "../Utils.ts";
+import {
+    EntityLike,
+    FileLike,
+    MarkupLike,
+    MessageIDLike,
+} from "../define.d.ts";
 import path from "path";
 import { promises as fs } from "fs";
 import { errors, utils } from "../index";

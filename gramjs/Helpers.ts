@@ -1,5 +1,5 @@
 import { isNode } from "browser-or-node";
-import bigInt from "big-integer";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 import type { EntityLike } from "./define";
 import type { Api } from "./tl";
 

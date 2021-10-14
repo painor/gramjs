@@ -2,7 +2,7 @@
  * Errors not related to the Telegram API itself
  */
 
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 
 /**
  * Occurs when a read operation was cancelled.

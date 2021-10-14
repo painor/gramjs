@@ -1,6 +1,6 @@
-import { MemorySession } from "./Memory";
-import { BinaryReader } from "../extensions";
-import { AuthKey } from "../crypto/AuthKey";
+import { MemorySession } from "./Memory.ts";
+import { BinaryReader } from "../extensions/mod.ts";
+import { AuthKey } from "../crypto/AuthKey.ts";
 
 const CURRENT_VERSION = "1";
 

@@ -1,5 +1,5 @@
-import bigInt from "big-integer";
-import { modExp } from "../Helpers";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
+import { modExp } from "../Helpers.ts";
 
 export class Factorizator {
     /**

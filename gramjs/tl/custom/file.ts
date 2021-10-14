@@ -1,8 +1,8 @@
-import type { FileLike } from "../../define";
-import { Api } from "../api";
-import { _photoSizeByteCount } from "../../Utils";
+import type { FileLike } from "../../define.d.ts";
+import { Api } from "../api.js";
+import { _photoSizeByteCount } from "../../Utils.ts";
 import { inspect } from "util";
-import { betterConsoleLog } from "../../Helpers";
+import { betterConsoleLog } from "../../Helpers.ts";
 
 export class File {
     private readonly media: FileLike;

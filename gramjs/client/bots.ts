@@ -1,8 +1,8 @@
-import type { EntityLike } from "../define";
-import { Api } from "../tl";
-import { InlineResults } from "../tl/custom/inlineResults";
+import type { EntityLike } from "../define.d.ts";
+import { Api } from "../tl/mod.ts";
+import { InlineResults } from "../tl/custom/inlineResults.ts";
 import GetInlineBotResults = Api.messages.GetInlineBotResults;
-import type { TelegramClient } from "./TelegramClient";
+import type { TelegramClient } from "./TelegramClient.ts";
 
 // BotMethods
 /** @hidden */

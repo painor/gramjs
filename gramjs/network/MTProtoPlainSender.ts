@@ -3,11 +3,11 @@
  *  in plain text, when no authorization key has been created yet.
  */
 import { MTProtoState } from "./MTProtoState";
-import { Api } from "../tl";
-import { toSignedLittleBuffer } from "../Helpers";
-import { InvalidBufferError } from "../errors";
-import { BinaryReader } from "../extensions";
-import type { Connection } from "./connection";
+import { Api } from "../tl/mod.ts";
+import { toSignedLittleBuffer } from "../Helpers.ts";
+import { InvalidBufferError } from "../errors/mod.ts";
+import { BinaryReader } from "../extensions/mod.ts";
+import type { Connection } from "./connection/mod.ts";
 
 /**
  * MTProto Mobile Protocol plain sender (https://core.telegram.org/mtproto/description#unencrypted-messages)

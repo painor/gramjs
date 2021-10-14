@@ -1,26 +1,26 @@
-import { Connection, TelegramClient, version } from "../";
-import { IS_NODE, sleep } from "../Helpers";
+import { Connection, TelegramClient, version } from "../mod.ts";
+import { IS_NODE, sleep } from "../Helpers.ts";
 import {
     ConnectionTCPFull,
     ConnectionTCPObfuscated,
-} from "../network/connection";
-import { Session, StoreSession } from "../sessions";
-import { Logger } from "../extensions";
-import { Api } from "../tl";
+} from "../network/connection/mod.ts";
+import { Session, StoreSession } from "../sessions/mod.ts";
+import { Logger } from "../extensions/mod.ts";
+import { Api } from "../tl/mod.ts";
 
 import os from "os";
-import type { AuthKey } from "../crypto/AuthKey";
-import { EntityCache } from "../entityCache";
-import type { ParseInterface } from "./messageParse";
-import type { EventBuilder } from "../events/common";
-import { MarkdownParser } from "../extensions/markdown";
-import { MTProtoSender } from "../network";
-import { LAYER } from "../tl/AllTLObjects";
+import type { AuthKey } from "../crypto/AuthKey.ts";
+import { EntityCache } from "../entityCache.ts";
+import type { ParseInterface } from "./messageParse.ts";
+import type { EventBuilder } from "../events/common.ts";
+import { MarkdownParser } from "../extensions/markdown.ts";
+import { MTProtoSender } from "../network/mod.ts";
+import { LAYER } from "../tl/AllTLObjects.ts";
 import {
     ConnectionTCPMTProxyAbridged,
     ProxyInterface,
     TCPMTProxy,
-} from "../network/connection/TCPMTProxy";
+} from "../network/connection/TCPMTProxy.ts";
 
 const EXPORTED_SENDER_RECONNECT_TIMEOUT = 1000; // 1 sec
 const EXPORTED_SENDER_RELEASE_TIMEOUT = 30000; // 30 sec

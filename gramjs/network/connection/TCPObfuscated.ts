@@ -1,8 +1,11 @@
-import { generateRandomBytes } from "../../Helpers";
-import { ObfuscatedConnection } from "./Connection";
-import { AbridgedPacketCodec } from "./TCPAbridged";
-import { CTR } from "../../crypto/CTR";
-import { PromisedNetSockets, PromisedWebSockets } from "../../extensions";
+import { generateRandomBytes } from "../../Helpers.ts";
+import { ObfuscatedConnection } from "./Connection.ts";
+import { AbridgedPacketCodec } from "./TCPAbridged.ts";
+import { CTR } from "../../crypto/CTR.ts";
+import {
+    PromisedNetSockets,
+    PromisedWebSockets,
+} from "../../extensions/mod.ts";
 
 class ObfuscatedIO {
     header?: Buffer = undefined;

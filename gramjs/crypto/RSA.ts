@@ -1,11 +1,11 @@
-import bigInt from "big-integer";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 import {
     generateRandomBytes,
     modExp,
     readBigIntFromBuffer,
     readBufferFromBigInt,
     sha1,
-} from "../Helpers";
+} from "../Helpers.ts";
 
 const PUBLIC_KEYS = [
     {

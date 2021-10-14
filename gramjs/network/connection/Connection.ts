@@ -2,12 +2,12 @@ import {
     Logger,
     PromisedNetSockets,
     PromisedWebSockets,
-} from "../../extensions";
-import { AsyncQueue } from "../../extensions";
-import { IS_NODE } from "../../Helpers";
-import { AbridgedPacketCodec } from "./TCPAbridged";
-import { FullPacketCodec } from "./TCPFull";
-import { ProxyInterface } from "./TCPMTProxy";
+} from "../../extensions/mod.ts";
+import { AsyncQueue } from "../../extensions/mod.ts";
+import { IS_NODE } from "../../Helpers.ts";
+import { AbridgedPacketCodec } from "./TCPAbridged.ts";
+import { FullPacketCodec } from "./TCPFull.ts";
+import { ProxyInterface } from "./TCPMTProxy.ts";
 
 /**
  * The `Connection` class is a wrapper around ``asyncio.open_connection``.

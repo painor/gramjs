@@ -1,9 +1,9 @@
-import { Api } from "../tl";
-import type { Entity, EntityLike } from "../define";
+import { Api } from "../tl/mod.ts";
+import type { Entity, EntityLike } from "../define.d.ts";
 import { ChatGetter } from "../tl/custom";
 import type { TelegramClient } from "..";
 
-import { isArrayLike } from "../Helpers";
+import { isArrayLike } from "../Helpers.ts";
 import { utils } from "../";
 
 /** @hidden */

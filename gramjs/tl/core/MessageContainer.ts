@@ -1,5 +1,5 @@
-import { TLMessage } from "./TLMessage";
-import type { BinaryReader } from "../../extensions";
+import { TLMessage } from "./TLMessage.ts";
+import type { BinaryReader } from "../../extensions/mod.ts";
 
 export class MessageContainer {
     static CONSTRUCTOR_ID = 0x73f1f8dc;

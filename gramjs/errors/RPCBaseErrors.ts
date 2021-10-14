@@ -1,7 +1,7 @@
 /**
  * Base class for all Remote Procedure Call errors.
  */
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 import { CustomError } from "ts-custom-error";
 
 export class RPCError extends CustomError {

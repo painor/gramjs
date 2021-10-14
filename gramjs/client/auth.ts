@@ -1,9 +1,8 @@
-import { Api } from "../tl";
-import * as utils from "../Utils";
-import { sleep } from "../Helpers";
-import { computeCheck as computePasswordSrpCheck } from "../Password";
-import type { TelegramClient } from "./TelegramClient";
-import { RPCError } from "../errors";
+import { Api } from "../tl/mod.ts";
+import * as utils from "../Utils.ts";
+import { sleep } from "../Helpers.ts";
+import { computeCheck as computePasswordSrpCheck } from "../Password.ts";
+import type { TelegramClient } from "./TelegramClient.ts";
 
 /**
  * For when you want to login as a {@link Api.User}<br/>

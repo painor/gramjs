@@ -1,6 +1,6 @@
 import { default as AES } from "@cryptography/aes";
-import { i2ab, ab2i } from "./converters";
-import { getWords } from "./words";
+import { i2ab, ab2i } from "./converters.ts";
+import { getWords } from "./words.ts";
 
 export class Counter {
     _counter: Buffer;

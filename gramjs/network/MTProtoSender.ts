@@ -11,26 +11,31 @@
  * A new authorization key will be generated on connection if no other
  * key exists yet.
  */
-import { AuthKey } from "../crypto/AuthKey";
-import { MTProtoState } from "./MTProtoState";
-import { BinaryReader, Logger } from "../extensions";
-import { MessagePacker } from "../extensions";
-import { GZIPPacked, MessageContainer, RPCResult, TLMessage } from "../tl/core";
-import { Api } from "../tl";
-import bigInt from "big-integer";
-import { sleep } from "../Helpers";
-import { RequestState } from "./RequestState";
-import { doAuthentication } from "./Authenticator";
-import { MTProtoPlainSender } from "./MTProtoPlainSender";
+import { AuthKey } from "../crypto/AuthKey.ts";
+import { MTProtoState } from "./MTProtoState.ts";
+import { BinaryReader, Logger } from "../extensions/mod.ts";
+import { MessagePacker } from "../extensions/mod.ts";
+import {
+    GZIPPacked,
+    MessageContainer,
+    RPCResult,
+    TLMessage,
+} from "../tl/core/mod.ts";
+import { Api } from "../tl/mod.ts";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
+import { sleep } from "../Helpers.ts";
+import { RequestState } from "./RequestState.ts";
+import { doAuthentication } from "./Authenticator.ts";
+import { MTProtoPlainSender } from "./MTProtoPlainSender.ts";
 import {
     BadMessageError,
     TypeNotFoundError,
     InvalidBufferError,
     SecurityError,
     RPCMessageToError,
-} from "../errors";
-import { Connection, UpdateConnectionState } from "./";
-import type { TelegramClient } from "..";
+} from "../errors/mod.ts";
+import { Connection, UpdateConnectionState } from "./mod.ts";
+import type { TelegramClient } from "../mod.ts";
 
 interface DEFAULT_OPTIONS {
     logger: any;

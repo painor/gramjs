@@ -1,8 +1,8 @@
 // Which updates have the following fields?
 
-import { getInputPeer, getPeerId } from "./Utils";
-import { isArrayLike } from "./Helpers";
-import { Api } from "./tl";
+import { getInputPeer, getPeerId } from "./Utils.ts";
+import { isArrayLike } from "./Helpers.ts";
+import { Api } from "./tl/mod.ts";
 
 export class EntityCache {
     private cacheMap: Map<number, any>;

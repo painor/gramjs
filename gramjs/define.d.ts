@@ -1,6 +1,6 @@
-import type { Button } from "./tl/custom/button";
-import { Api } from "./tl";
-import type { CustomFile } from "./client/uploads";
+import type { Button } from "./tl/custom/button.ts";
+import { Api } from "./tl/mod.ts";
+import type { CustomFile } from "./client/uploads.ts";
 
 type ValueOf<T> = T[keyof T];
 type Phone = string;

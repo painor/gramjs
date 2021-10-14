@@ -12,14 +12,19 @@ import * as userMethods from "./users";
 import * as chatMethods from "./chats";
 import * as dialogMethods from "./dialogs";
 import * as twoFA from "./2fa";
-import type { ButtonLike, Entity, EntityLike, MessageIDLike } from "../define";
-import { Api } from "../tl";
-import { sanitizeParseMode } from "../Utils";
+import type {
+    ButtonLike,
+    Entity,
+    EntityLike,
+    MessageIDLike,
+} from "../define.d.ts";
+import { Api } from "../tl/mod.ts";
+import { sanitizeParseMode } from "../Utils.ts";
 import type { EventBuilder } from "../events/common";
 import { MTProtoSender, UpdateConnectionState } from "../network";
 
 import { LAYER } from "../tl/AllTLObjects";
-import { betterConsoleLog, IS_NODE } from "../Helpers";
+import { betterConsoleLog, IS_NODE } from "../Helpers.ts";
 import { DownloadMediaInterface } from "./downloads";
 import type { Message } from "../tl/patched";
 import { NewMessage, NewMessageEvent } from "../events";

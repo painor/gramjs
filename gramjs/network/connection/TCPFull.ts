@@ -1,7 +1,10 @@
-import { Connection, PacketCodec } from "./Connection";
-import { crc32 } from "../../Helpers";
-import { InvalidChecksumError } from "../../errors";
-import type { PromisedNetSockets, PromisedWebSockets } from "../../extensions";
+import { Connection, PacketCodec } from "./Connection.ts";
+import { crc32 } from "../../Helpers.ts";
+import { InvalidChecksumError } from "../../errors/mod.ts";
+import type {
+    PromisedNetSockets,
+    PromisedWebSockets,
+} from "../../extensions/mod.ts";
 
 export class FullPacketCodec extends PacketCodec {
     private _sendCounter: number;

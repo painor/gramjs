@@ -1,4 +1,4 @@
-import bigInt from "big-integer";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 
 export class RequestState {
     public containerId: undefined;

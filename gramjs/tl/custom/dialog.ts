@@ -1,11 +1,11 @@
-import type { TelegramClient } from "../..";
-import { Api } from "../api";
-import type { Entity } from "../../define";
-import { getDisplayName, getInputPeer, getPeerId } from "../../Utils";
-import { Draft } from "./draft";
-import { Message } from "./message";
+import type { TelegramClient } from "../../mod.ts";
+import { Api } from "../api.js";
+import type { Entity } from "../../define.d.ts";
+import { getDisplayName, getInputPeer, getPeerId } from "../../Utils.ts";
+import { Draft } from "./draft.ts";
+import { Message } from "./message.ts";
 import { inspect } from "util";
-import { betterConsoleLog } from "../../Helpers";
+import { betterConsoleLog } from "../../Helpers.ts";
 
 export class Dialog {
     _client: TelegramClient;

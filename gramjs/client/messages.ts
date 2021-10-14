@@ -1,5 +1,5 @@
-import { Api } from "../tl";
-import { Message } from "../tl/custom/message";
+import { Api } from "../tl/mod.ts";
+import { Message } from "../tl/custom/message.ts";
 import type {
     DateLike,
     EntityLike,
@@ -7,20 +7,20 @@ import type {
     MarkupLike,
     MessageIDLike,
     MessageLike,
-} from "../define";
-import { RequestIter } from "../requestIter";
+} from "../define.d.ts";
+import { RequestIter } from "../requestIter.ts";
 import {
     _EntityType,
     _entityType,
     TotalList,
     isArrayLike,
     groupBy,
-} from "../Helpers";
-import { getMessageId, getPeerId } from "../Utils";
-import type { TelegramClient } from "../";
-import { utils } from "../";
-import { _parseMessageText } from "./messageParse";
-import { _getPeer } from "./users";
+} from "../Helpers.ts";
+import { getMessageId, getPeerId } from "../Utils.ts";
+import type { TelegramClient } from "../mod.ts";
+import { utils } from "../mod.ts";
+import { _parseMessageText } from "./messageParse.ts";
+import { _getPeer } from "./users.ts";
 
 const _MAX_CHUNK_SIZE = 100;
 

@@ -1,8 +1,11 @@
-import { readBufferFromBigInt } from "../../Helpers";
-import { Connection, PacketCodec } from "./Connection";
-import type { PromisedNetSockets, PromisedWebSockets } from "../../extensions";
+import { readBufferFromBigInt } from "../../Helpers.ts";
+import { Connection, PacketCodec } from "./Connection.ts";
+import type {
+    PromisedNetSockets,
+    PromisedWebSockets,
+} from "../../extensions/mod.ts";
 
-import bigInt from "big-integer";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 
 export class AbridgedPacketCodec extends PacketCodec {
     static tag = Buffer.from("ef", "hex");

@@ -1,12 +1,12 @@
-import { Session } from "./Abstract";
-import type { AuthKey } from "../crypto/AuthKey";
-import { Api } from "../tl";
-import bigInt from "big-integer";
+import { Session } from "./Abstract.ts";
+import type { AuthKey } from "../crypto/AuthKey.ts";
+import { Api } from "../tl/mod.ts";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 
-import { getDisplayName, getInputPeer, getPeerId } from "../Utils";
-import { isArrayLike } from "../Helpers";
-import { utils } from "../";
-import type { EntityLike } from "../define";
+import { getDisplayName, getInputPeer, getPeerId } from "../Utils.ts";
+import { isArrayLike } from "../Helpers.ts";
+import { utils } from "../mod.ts";
+import type { EntityLike } from "../define.d.ts";
 
 export class MemorySession extends Session {
     protected _serverAddress?: string;

@@ -1,6 +1,6 @@
-import type { AuthKey } from "../crypto/AuthKey";
-import type { EntityLike } from "../define";
-import { Api } from "../tl";
+import type { AuthKey } from "../crypto/AuthKey.ts";
+import type { EntityLike } from "../define.d.ts";
+import { Api } from "../tl/mod.ts";
 
 export abstract class Session {
     /**

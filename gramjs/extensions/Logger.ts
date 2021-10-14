@@ -1,4 +1,4 @@
-import { IS_NODE } from "../Helpers";
+import { IS_NODE } from "../Helpers.ts";
 
 let _level: string | undefined = undefined;
 

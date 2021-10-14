@@ -1,13 +1,13 @@
-import bigInt from "big-integer";
-import type { AuthKey } from "../crypto/AuthKey";
-import { helpers } from "../";
-import { Api } from "../tl";
-import { sha256, toSignedLittleBuffer } from "../Helpers";
-import { GZIPPacked, TLMessage } from "../tl/core";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
+import type { AuthKey } from "../crypto/AuthKey.ts";
+import { helpers } from "../mod.ts";
+import { Api } from "../tl/mod.ts";
+import { sha256, toSignedLittleBuffer } from "../Helpers.ts";
+import { GZIPPacked, TLMessage } from "../tl/core/mod.ts";
 import { BinaryReader } from "../extensions";
 import type { BinaryWriter } from "../extensions";
 import { IGE } from "../crypto/IGE";
-import { InvalidBufferError, SecurityError } from "../errors";
+import { InvalidBufferError, SecurityError } from "../errors/mod.ts";
 
 export class MTProtoState {
     private readonly authKey?: AuthKey;

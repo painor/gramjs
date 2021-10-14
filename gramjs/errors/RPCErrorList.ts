@@ -3,7 +3,7 @@ import {
     InvalidDCError,
     FloodError,
     BadRequestError,
-} from "./RPCBaseErrors";
+} from "./RPCBaseErrors.ts";
 
 export class UserMigrateError extends InvalidDCError {
     public newDc: number;

@@ -1,6 +1,6 @@
-import { serializeBytes } from "../";
+import { serializeBytes } from "../mod.ts";
 import { inflate } from "pako";
-import type { BinaryReader } from "../../extensions";
+import type { BinaryReader } from "../../extensions/mod.ts";
 
 export class GZIPPacked {
     static CONSTRUCTOR_ID = 0x3072cfa1;

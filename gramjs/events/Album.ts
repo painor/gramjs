@@ -1,7 +1,7 @@
 import { DefaultEventInterface, EventBuilder, EventCommon } from "./common";
-import { Entity, EntityLike } from "../define";
+import { Entity, EntityLike } from "../define.d.ts";
 import { Message as CustomMessage } from "../tl/custom/message";
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 import { TelegramClient } from "..";
 
 const _ALBUM_DELAY = 500; // 0.5 sec

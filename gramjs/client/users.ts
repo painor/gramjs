@@ -1,10 +1,10 @@
-import { Api } from "../tl";
-import type { Entity, EntityLike } from "../define";
-import { getPeerId as peerUtils } from "../Utils";
-import { _entityType, _EntityType, sleep, isArrayLike } from "../Helpers";
+import { Api } from "../tl/mod.ts";
+import type { Entity, EntityLike } from "../define.d.ts";
+import { getPeerId as peerUtils } from "../Utils.ts";
+import { _entityType, _EntityType, sleep, isArrayLike } from "../Helpers.ts";
 import { errors, utils } from "../";
 import type { TelegramClient } from "../";
-import bigInt from "big-integer";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 
 // UserMethods {
 // region Invoking Telegram request

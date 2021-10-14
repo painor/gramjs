@@ -1,6 +1,6 @@
-import { MemorySession } from "./Memory";
+import { MemorySession } from "./Memory.ts";
 import store from "store2";
-import { AuthKey } from "../crypto/AuthKey";
+import { AuthKey } from "../crypto/AuthKey.ts";
 
 export class StoreSession extends MemorySession {
     private readonly sessionName: string;

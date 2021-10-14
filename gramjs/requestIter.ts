@@ -1,6 +1,6 @@
-import type { TelegramClient } from "./client/TelegramClient";
-import { sleep } from "./Helpers";
-import { helpers } from "./";
+import type { TelegramClient } from "./client/TelegramClient.ts";
+import { sleep } from "./Helpers.ts";
+import { helpers } from "./mod.ts";
 
 interface BaseRequestIterInterface {
     reverse?: boolean;

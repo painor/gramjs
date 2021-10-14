@@ -1,9 +1,9 @@
-import type { Entity, EntityLike } from "../../define";
-import type { TelegramClient } from "../../client/TelegramClient";
-import { utils } from "../../";
-import { Api } from "../api";
+import type { Entity, EntityLike } from "../../define.d.ts";
+import type { TelegramClient } from "../../client/TelegramClient.ts";
+import { utils } from "../../mod.ts";
+import { Api } from "../api.js";
 import { inspect } from "util";
-import { betterConsoleLog } from "../../Helpers";
+import { betterConsoleLog } from "../../Helpers.ts";
 
 export interface ChatGetterConstructorParams {
     chatPeer?: EntityLike;

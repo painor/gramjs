@@ -1,8 +1,8 @@
-import { Api } from "../tl";
-import type { ButtonLike } from "../define";
-import { Button } from "../tl/custom/button";
-import { MessageButton } from "../tl/custom/messageButton";
-import { isArrayLike } from "../Helpers";
+import { Api } from "../tl/mod.ts";
+import type { ButtonLike } from "../define.d.ts";
+import { Button } from "../tl/custom/button.ts";
+import { MessageButton } from "../tl/custom/messageButton.ts";
+import { isArrayLike } from "../Helpers.ts";
 
 // ButtonMethods
 /** @hidden */

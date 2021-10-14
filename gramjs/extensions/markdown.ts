@@ -1,4 +1,4 @@
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 import { DEFAULT_DELIMITERS } from "../client/messageParse";
 
 export class MarkdownParser {

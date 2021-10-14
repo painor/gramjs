@@ -1,10 +1,10 @@
-import { Api } from "../tl";
-import { RequestIter } from "../requestIter";
-import { TelegramClient, utils } from "../index";
-import { Message } from "../tl/custom/message";
-import { Dialog } from "../tl/custom/dialog";
-import { DateLike, EntityLike } from "../define";
-import { TotalList } from "../Helpers";
+import { Api } from "../tl/mod.ts";
+import { RequestIter } from "../requestIter.ts";
+import { TelegramClient, utils } from "../mod.ts";
+import { Message } from "../tl/custom/message.ts";
+import { Dialog } from "../tl/custom/dialog.ts";
+import { DateLike, EntityLike } from "../define.d.ts";
+import { TotalList } from "../Helpers.ts";
 
 const _MAX_CHUNK_SIZE = 100;
 

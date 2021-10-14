@@ -1,9 +1,14 @@
-import type { TelegramClient } from "./TelegramClient";
-import type { EntitiesLike, Entity, EntityLike, ValueOf } from "../define";
-import { sleep, getMinBigInt, TotalList, betterConsoleLog } from "../Helpers";
-import { RequestIter } from "../requestIter";
-import { helpers, utils } from "../";
-import { Api } from "../tl";
+import type { TelegramClient } from "./TelegramClient.ts";
+import type { EntitiesLike, Entity, EntityLike, ValueOf } from "../define.d.ts";
+import {
+    sleep,
+    getMinBigInt,
+    TotalList,
+    betterConsoleLog,
+} from "../Helpers.ts";
+import { RequestIter } from "../requestIter.ts";
+import { helpers, utils } from "../mod.ts";
+import { Api } from "../tl/mod.ts";
 import bigInt, { BigInteger } from "big-integer";
 import { inspect } from "util";
 

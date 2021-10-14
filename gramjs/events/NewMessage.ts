@@ -4,9 +4,9 @@ import {
     EventBuilder,
     EventCommon,
 } from "./common";
-import type { Entity, EntityLike } from "../define";
+import type { Entity, EntityLike } from "../define.d.ts";
 import type { TelegramClient } from "..";
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 import { Message } from "../tl/patched";
 import type { Message as CustomMessage } from "../tl/custom/message";
 

@@ -1,8 +1,8 @@
-import { TypeNotFoundError } from "../errors";
+import { TypeNotFoundError } from "../errors/mod.ts";
 import { coreObjects } from "../tl/core";
 
 import { tlobjects } from "../tl/AllTLObjects";
-import { readBigIntFromBuffer } from "../Helpers";
+import { readBigIntFromBuffer } from "../Helpers.ts";
 
 export class BinaryReader {
     private readonly stream: Buffer;

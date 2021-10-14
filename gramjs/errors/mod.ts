@@ -4,10 +4,10 @@
  * @param request the request that caused this error
  * @constructor the RPCError as a Python exception that represents this error
  */
-import { Api } from "../tl";
+import { Api } from "../tl/mod.ts";
 
-import { RPCError } from "./RPCBaseErrors";
-import { rpcErrorRe } from "./RPCErrorList";
+import { RPCError } from "./RPCBaseErrors.ts";
+import { rpcErrorRe } from "./RPCErrorList.ts";
 
 export function RPCMessageToError(
     rpcError: Api.RpcError,

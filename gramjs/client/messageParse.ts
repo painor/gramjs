@@ -1,11 +1,11 @@
-import { getPeerId, sanitizeParseMode } from "../Utils";
-import { Api } from "../tl";
-import type { EntityLike } from "../define";
-import type { TelegramClient } from "./TelegramClient";
-import { utils } from "../index";
-import { _EntityType, _entityType, isArrayLike } from "../Helpers";
-import { Message } from "../tl/custom/message";
-import bigInt from "big-integer";
+import { getPeerId, sanitizeParseMode } from "../Utils.ts";
+import { Api } from "../tl/mod.ts";
+import type { EntityLike } from "../define.d.ts";
+import type { TelegramClient } from "./TelegramClient.ts";
+import { utils } from "../mod.ts";
+import { _EntityType, _entityType, isArrayLike } from "../Helpers.ts";
+import { Message } from "../tl/custom/message.ts";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 
 export type messageEntities =
     | typeof Api.MessageEntityBold

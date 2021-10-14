@@ -1,12 +1,12 @@
-import { ObfuscatedConnection } from "./Connection";
-import { AbridgedPacketCodec } from "./TCPAbridged";
-import { generateRandomBytes, sha256 } from "../../Helpers";
+import { ObfuscatedConnection } from "./Connection.ts";
+import { AbridgedPacketCodec } from "./TCPAbridged.ts";
+import { generateRandomBytes, sha256 } from "../../Helpers.ts";
 import {
     Logger,
     PromisedNetSockets,
     PromisedWebSockets,
-} from "../../extensions";
-import { CTR } from "../../crypto/CTR";
+} from "../../extensions/mod.ts";
+import { CTR } from "../../crypto/CTR.ts";
 
 export interface ProxyInterface {
     socksType?: 4 | 5;

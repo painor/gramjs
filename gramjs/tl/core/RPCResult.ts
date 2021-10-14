@@ -1,7 +1,7 @@
-import { Api } from "../api";
-import type { BinaryReader } from "../../extensions";
-import { GZIPPacked } from "./";
-import bigInt from "big-integer";
+import { Api } from "../api.js";
+import type { BinaryReader } from "../../extensions/mod.ts";
+import { GZIPPacked } from "./mod.ts";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 
 export class RPCResult {
     static CONSTRUCTOR_ID = 0xf35c6d01;

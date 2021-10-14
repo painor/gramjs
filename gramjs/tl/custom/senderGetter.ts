@@ -1,8 +1,8 @@
-import type { Entity } from "../../define";
-import type { TelegramClient } from "../..";
-import { Api } from "../api";
+import type { Entity } from "../../define.d.ts";
+import type { TelegramClient } from "../../mod.ts";
+import { Api } from "../api.js";
 import { inspect } from "util";
-import { betterConsoleLog } from "../../Helpers";
+import { betterConsoleLog } from "../../Helpers.ts";
 
 interface SenderGetterConstructorInterface {
     senderId?: number;

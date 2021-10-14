@@ -3,10 +3,10 @@ import {
     toSignedLittleBuffer,
     readBufferFromBigInt,
     readBigIntFromBuffer,
-} from "../Helpers";
-import { BinaryReader } from "../extensions";
-import { sleep } from "../Helpers";
-import bigInt from "big-integer";
+} from "../Helpers.ts";
+import { BinaryReader } from "../extensions/mod.ts";
+import { sleep } from "../Helpers.ts";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
 
 export class AuthKey {
     private _key?: Buffer;

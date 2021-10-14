@@ -4,7 +4,7 @@
  * @param log
  * @returns {Promise<{authKey: *, timeOffset: *}>}
  */
-import { MTProtoPlainSender } from "./MTProtoPlainSender";
+import { MTProtoPlainSender } from "./MTProtoPlainSender.ts";
 import {
     bufferXor,
     generateKeyDataFromNonce,
@@ -16,15 +16,15 @@ import {
     sha1,
     sha256,
     toSignedLittleBuffer,
-} from "../Helpers";
-import { Api } from "../tl";
-import { SecurityError } from "../errors";
-import { Factorizator } from "../crypto/Factorizator";
-import { _serverKeys } from "../crypto/RSA";
-import { IGE } from "../crypto/IGE";
-import bigInt from "big-integer";
-import { BinaryReader } from "../extensions";
-import { AuthKey } from "../crypto/AuthKey";
+} from "../Helpers.ts";
+import { Api } from "../tl/mod.ts";
+import { SecurityError } from "../errors/mod.ts";
+import { Factorizator } from "../crypto/Factorizator.ts";
+import { _serverKeys } from "../crypto/RSA.ts";
+import { IGE } from "../crypto/IGE.ts";
+import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
+import { BinaryReader } from "../extensions/mod.ts";
+import { AuthKey } from "../crypto/AuthKey.ts";
 
 const RETRIES = 20;
 

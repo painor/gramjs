@@ -1,9 +1,9 @@
-import type { TelegramClient } from "../..";
-import type { EntityLike, MessageIDLike } from "../../define";
-import { Api } from "../api";
-import { utils } from "../../";
+import type { TelegramClient } from "../../mod.ts";
+import type { EntityLike, MessageIDLike } from "../../define.d.ts";
+import { Api } from "../api.js";
+import { utils } from "../../mod.ts";
 import { inspect } from "util";
-import { betterConsoleLog } from "../../Helpers";
+import { betterConsoleLog } from "../../Helpers.ts";
 
 export class InlineResult {
     private _ARTICLE = "article";

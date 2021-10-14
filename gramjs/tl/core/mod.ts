@@ -1,7 +1,7 @@
-import { TLMessage } from "./TLMessage";
-import { RPCResult } from "./RPCResult";
-import { MessageContainer } from "./MessageContainer";
-import { GZIPPacked } from "./GZIPPacked";
+import { TLMessage } from "./TLMessage.ts";
+import { RPCResult } from "./RPCResult.ts";
+import { MessageContainer } from "./MessageContainer.ts";
+import { GZIPPacked } from "./GZIPPacked.ts";
 
 export const coreObjects = new Map<number, Function>([
     [RPCResult.CONSTRUCTOR_ID, RPCResult],

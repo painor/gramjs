@@ -1,10 +1,9 @@
-import { ChatGetter } from "./chatGetter";
-import { SenderGetter } from "./senderGetter";
-import { Api } from "../api";
-import type { TelegramClient } from "../../client/TelegramClient";
-import type { Entity } from "../../define";
-import { _EntityType, _entityType, betterConsoleLog } from "../../Helpers";
-import { _getEntityPair, getPeerId } from "../../Utils";
+import { ChatGetter } from "./chatGetter.ts";
+import { SenderGetter } from "./senderGetter.ts";
+import type { TelegramClient } from "../../client/TelegramClient.ts";
+import type { Entity } from "../../define.d.ts";
+import { _EntityType, _entityType, betterConsoleLog } from "../../Helpers.ts";
+import { _getEntityPair, getPeerId } from "../../Utils.ts";
 import { inspect } from "util";
 import { Mixin } from "ts-mixer";
 

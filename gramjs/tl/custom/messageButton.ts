@@ -1,9 +1,9 @@
-import type { TelegramClient } from "../../client/TelegramClient";
-import type { ButtonLike, EntityLike, MessageIDLike } from "../../define";
-import { Api } from "../api";
-import { Button } from "./button";
+import type { TelegramClient } from "../../client/TelegramClient.ts";
+import type { ButtonLike, EntityLike, MessageIDLike } from "../../define.d.ts";
+import { Api } from "../api.js";
+import { Button } from "./button.ts";
 import { inspect } from "util";
-import { betterConsoleLog } from "../../Helpers";
+import { betterConsoleLog } from "../../Helpers.ts";
 
 export class MessageButton {
     private readonly _client: TelegramClient;

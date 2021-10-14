@@ -1,4 +1,4 @@
-import { Api } from "../api";
+import { Api } from "../api.js";
 import { Message as _Message } from "../custom/message";
 import { Mixin } from "ts-mixer";
 import { tlobjects } from "../AllTLObjects";

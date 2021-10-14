@@ -1,20 +1,17 @@
-import { SenderGetter } from "./senderGetter";
-import type { Entity, EntityLike } from "../../define";
-import { Api } from "../api";
-import type { TelegramClient } from "../..";
-import { ChatGetter } from "./chatGetter";
-import * as utils from "../../Utils";
-import { Forward } from "./forward";
-import type { File } from "./file";
+import { SenderGetter } from "./senderGetter.ts";
+import type { Entity, EntityLike } from "../../define.d.ts";
+import { Api } from "../api.js";
+import type { TelegramClient } from "../../mod.ts";
+import { ChatGetter } from "./chatGetter.ts";
+import * as utils from "../../Utils.ts";
+import { Forward } from "./forward.ts";
+import type { File } from "./file.ts";
 import { Mixin } from "ts-mixer";
-import { EditMessageParams, SendMessageParams } from "../../client/messages";
-import {
-    DownloadFileParams,
-    DownloadMediaInterface,
-} from "../../client/downloads";
+import { EditMessageParams, SendMessageParams } from "../../client/messages.ts";
+import { DownloadMediaInterface } from "../../client/downloads.ts";
 import { inspect } from "util";
-import { betterConsoleLog } from "../../Helpers";
-import { _selfId } from "../../client/users";
+import { betterConsoleLog } from "../../Helpers.ts";
+import { _selfId } from "../../client/users.ts";
 
 interface MessageBaseInterface {
     id: any;
