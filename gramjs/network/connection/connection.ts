@@ -1,5 +1,5 @@
-import { AsyncQueue, TCPSocket, WS } from "../extensions/mod.ts";
-import { Buffer, isBrowser } from "../deps.ts";
+import { AsyncQueue, TCPSocket, WS } from "../../extensions/mod.ts";
+import { Buffer, isBrowser } from "../../deps.ts";
 
 /**
  * The `Connection` class is a wrapper around ``asyncio.open_connection``.

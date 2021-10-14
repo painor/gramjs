@@ -1,9 +1,9 @@
-import { generateRandomBytes } from "../helpers.ts";
+import { generateRandomBytes } from "../../helpers.ts";
 import { ObfuscatedConnection } from "./connection.ts";
 import { AbridgedPacketCodec } from "./tcp_abridged.ts";
-import { CTR } from "../crypto/mod.ts";
-import { TCPSocket, WS } from "../extensions/mod.ts";
-import { Buffer } from "../deps.ts";
+import { CTR } from "../../crypto/mod.ts";
+import { TCPSocket, WS } from "../../extensions/mod.ts";
+import { Buffer } from "../../deps.ts";
 
 class ObfuscatedIO {
   header?: Buffer = undefined;

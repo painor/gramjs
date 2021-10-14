@@ -1,7 +1,7 @@
-import { readBufferFromBigInt } from "../helpers.ts";
+import { readBufferFromBigInt } from "../../helpers.ts";
 import { Connection, PacketCodec } from "./connection.ts";
-import { bigInt, Buffer } from "../deps.ts";
-import type { TCPSocket, WS } from "../extensions/mod.ts";
+import { bigInt, Buffer } from "../../deps.ts";
+import type { TCPSocket, WS } from "../../extensions/mod.ts";
 
 export class AbridgedPacketCodec extends PacketCodec {
   static tag = Buffer.from("ef", "hex");
