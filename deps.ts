@@ -1,7 +1,6 @@
 export * as denoflate from "https://deno.land/x/denoflate@1.2.1/mod.ts";
 export * as mime from "https://deno.land/x/mime_types@1.0.0/mod.ts";
 export * as fs from "https://deno.land/std@0.101.0/fs/mod.ts";
-export * as os from "https://deno.land/std@0.101.0/node/os.ts";
 export * as path from "https://deno.land/std@0.101.0/path/mod.ts";
 export { Buffer } from "https://deno.land/std@0.101.0/node/buffer.ts";
 export { Mixed } from "https://deno.land/x/class_mixins@v0.1.3/index.ts";

@@ -53,8 +53,8 @@ class CastError extends Error {
   }
 }
 
-const CACHING_SUPPORTED =
-  typeof self !== "undefined" && self.localStorage !== undefined;
+const CACHING_SUPPORTED = false;
+//typeof self !== "undefined" && self.localStorage !== undefined;
 
 const CACHE_KEY = "GramJs:apiCache";
 
@@ -89,7 +89,7 @@ function loadFromTlSchemas() {
 }
 
 function extractParams(fileContent) {
-  const f = parseTl(fileContent, 109);
+  const f = parseTl(new TextDecoder().decode(fileContent), 109);
   const constructors = [];
   const functions = [];
   for (const d of f) {
