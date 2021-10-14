@@ -1,5 +1,5 @@
 import { Buffer, crypto, ctr256 } from "./deps.ts";
-import { bytes } from "./tl_types.ts";
+import { bytes } from "./tl/types.ts";
 
 // endregion
 export function createDecipheriv(_algorithm: string, key: Buffer, iv: Buffer) {

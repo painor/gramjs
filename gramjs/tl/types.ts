@@ -1,4 +1,4 @@
-import { BigInteger, Buffer } from "./deps.ts";
+import { BigInteger, Buffer } from "../deps.ts";
 
 export type AnyLiteral = Record<string, any> | void;
 export type Client = any; // To be defined.

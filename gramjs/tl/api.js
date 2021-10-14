@@ -1,15 +1,16 @@
 import {
   generateRandomBytes,
   isArrayLike,
+  parseTl,
   readBigIntFromBuffer,
-} from "./helpers.ts";
+  serializeBytes,
+  serializeDate,
+  toSignedLittleBuffer,
+} from "../helpers.ts";
 
 function generateRandomBigInt() {
   return readBigIntFromBuffer(generateRandomBytes(8), false, true);
 }
-
-import { parseTl, serializeBytes, serializeDate } from "./helpers.ts";
-import { toSignedLittleBuffer } from "./helpers.ts";
 
 const __dirname = new URL(".", import.meta.url).pathname;
 const tlContent = Deno.readFileSync(__dirname + "static/api.tl");
