@@ -1,2 +1,2 @@
-export * from "./PromisedNetSockets.ts";
-export * from "./PromisedWebSockets.ts";
+export * from "./tcp_socket.ts";
+export * from "./web_socket.ts";

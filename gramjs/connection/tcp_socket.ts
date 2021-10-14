@@ -2,14 +2,13 @@ import { Buffer, Client, Mutex, SocketEvent, SocketPacket } from "../deps.ts";
 
 const mutex = new Mutex();
 
-const closeError = new Error("NetSocket was closed");
+const closeError = new Error("The socket was closed");
 
-export class PromisedNetSockets {
+export class TCPSocketConnection {
   private client?: Client;
   private closed: boolean;
   private stream: Buffer;
   private canRead?: boolean | Promise<boolean>;
-  // deno-lint-ignore no-explicit-any
   private resolveRead: ((value?: any) => void) | undefined;
 
   constructor() {

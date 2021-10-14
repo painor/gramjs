@@ -2,9 +2,9 @@ import { Buffer, Mutex } from "../deps.ts";
 
 const mutex = new Mutex();
 
-const closeError = new Error("WebSocket was closed");
+const closeError = new Error("The socket was closed");
 
-export class PromisedWebSockets {
+export class WebSocketConnection {
   private closed: boolean;
   private stream: Buffer;
   private canRead?: boolean | Promise<boolean>;
