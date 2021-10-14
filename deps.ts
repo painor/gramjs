@@ -22,9 +22,9 @@ export {
 export type { BigNumber } from "https://deno.land/x/biginteger@v0.1.3/mod.ts";
 
 export {
-  igeEncrypt,
-  igeDecrypt,
   ctr256,
+  igeDecrypt,
+  igeEncrypt,
 } from "https://deno.land/x/wasm_crypto@v0.1.3/mod.ts";
 export { crypto } from "https://cdn.skypack.dev/@stagas/webcrypto-liner";
 

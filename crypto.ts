@@ -1,4 +1,4 @@
-import { ctr256, Buffer, crypto } from "./deps.ts";
+import { Buffer, crypto, ctr256 } from "./deps.ts";
 import { bytes } from "./tl_types.ts";
 
 // endregion
@@ -40,7 +40,7 @@ export class Hash {
         return Buffer.from(await self.crypto.subtle.digest("SHA-1", this.data));
       } else if (this.algorithm === "sha256") {
         return Buffer.from(
-          await self.crypto.subtle.digest("SHA-256", this.data)
+          await self.crypto.subtle.digest("SHA-256", this.data),
         );
       }
     }
@@ -53,7 +53,7 @@ export async function pbkdf2Sync(password: any, salt: any, iterations: any) {
     password,
     { name: "PBKDF2" },
     false,
-    ["deriveBits"]
+    ["deriveBits"],
   );
   return Buffer.from(
     await crypto.subtle.deriveBits(
@@ -64,8 +64,8 @@ export async function pbkdf2Sync(password: any, salt: any, iterations: any) {
         iterations,
       },
       passwordKey,
-      512
-    )
+      512,
+    ),
   );
 }
 

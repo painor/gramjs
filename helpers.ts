@@ -1,5 +1,5 @@
 import * as crypto from "./crypto.ts";
-import { Buffer, BigInteger, bigInt } from "./deps.ts";
+import { bigInt, BigInteger, Buffer } from "./deps.ts";
 
 export function serializeDate(dt: number | Date) {
   if (!dt) {
@@ -54,7 +54,7 @@ export function serializeBytes(data: Buffer | string | any) {
         data.length % 256,
         (data.length >> 8) % 256,
         (data.length >> 16) % 256,
-      ])
+      ]),
     );
     r.push(data);
   }
@@ -66,7 +66,7 @@ export function serializeBytes(data: Buffer | string | any) {
 export function readBigIntFromBuffer(
   buffer: Buffer,
   little = true,
-  signed = false
+  signed = false,
 ): BigInteger {
   let randBuffer: any = Buffer.from(buffer);
   const bytesNumber = randBuffer.length;
@@ -168,12 +168,13 @@ export function crc32(buf: Buffer | string) {
 }
 
 export function variableSnakeToCamelCase(str: string) {
-  return str.replace(/([-_][a-z])/g, (group) =>
-    group.toUpperCase().replace("-", "").replace("_", "")
+  return str.replace(
+    /([-_][a-z])/g,
+    (group) => group.toUpperCase().replace("-", "").replace("_", ""),
   );
 }
 
-function buildArgConfig(name: string, argType: string) {
+export function buildArgConfig(name: string, argType: string) {
   name = name === "self" ? "is_self" : name;
   // Default values
   const currentConfig: any = {
@@ -252,7 +253,7 @@ function buildArgConfig(name: string, argType: string) {
 
 const fromLine = (line: string, isFunction: boolean) => {
   const match = line.match(
-    /([\w.]+)(?:#([0-9a-fA-F]+))?(?:\s{?\w+:[\w\d<>#.?!]+}?)*\s=\s([\w\d<>#.?]+);$/
+    /([\w.]+)(?:#([0-9a-fA-F]+))?(?:\s{?\w+:[\w\d<>#.?!]+}?)*\s=\s([\w\d<>#.?]+);$/,
   );
   if (!match) {
     // Probably "vector#1cb5c415 {t:Type} # [ t ] = Vector t;"
@@ -274,9 +275,11 @@ const fromLine = (line: string, isFunction: boolean) => {
     let args;
 
     if (Object.values(currentConfig.argsConfig).length) {
-      args = ` ${Object.keys(currentConfig.argsConfig)
-        .map((arg) => arg.toString())
-        .join(" ")}`;
+      args = ` ${
+        Object.keys(currentConfig.argsConfig)
+          .map((arg) => arg.toString())
+          .join(" ")
+      }`;
     } else {
       args = "";
     }
@@ -301,13 +304,14 @@ const fromLine = (line: string, isFunction: boolean) => {
       // @ts-ignore
       currentConfig.argsConfig[variableSnakeToCamelCase(name)] = buildArgConfig(
         name,
-        argType
+        argType,
       );
     }
   }
   if (currentConfig.name.includes(".")) {
-    [currentConfig.namespace, currentConfig.name] =
-      currentConfig.name.split(/\.(.+)/);
+    [currentConfig.namespace, currentConfig.name] = currentConfig.name.split(
+      /\.(.+)/,
+    );
   }
   currentConfig.name = snakeToCamelCase(currentConfig.name);
   /*
@@ -325,11 +329,11 @@ export const parseTl = function* (
   content: string,
   layer: string,
   methods: any[] = [],
-  ignoreIds = CORE_TYPES
+  ignoreIds = CORE_TYPES,
 ) {
   const methodInfo = (methods || []).reduce(
     (o, m) => ({ ...o, [m.name]: m }),
-    {}
+    {},
   );
   const objAll = [];
   const objByName: any = {};
