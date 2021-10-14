@@ -1,5 +1,33 @@
 import * as crypto from "./crypto/mod.ts";
+import { bytes } from "./tl/types.ts";
 import { bigInt, BigInteger, Buffer } from "./deps.ts";
+
+export async function sha1(data: bytes): Promise<Buffer> {
+  const shaSum = crypto.createHash("sha1");
+  shaSum.update(data);
+  return (await shaSum.digest())!;
+}
+
+export function modExp(
+  a: BigInteger,
+  b: BigInteger,
+  n: BigInteger,
+): BigInteger {
+  a = a.remainder(n);
+  let result = BigInteger.one;
+  let x = a;
+  while (b.greater(BigInteger.zero)) {
+    const leastSignificantBit = b.remainder(BigInt(2));
+    b = b.divide(BigInt(2));
+    if (leastSignificantBit.eq(BigInteger.one)) {
+      result = result.multiply(x);
+      result = result.remainder(n);
+    }
+    x = x.multiply(x);
+    x = x.remainder(n);
+  }
+  return result;
+}
 
 export function readBufferFromBigInt(
   bigIntVar: BigInteger,
