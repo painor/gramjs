@@ -4,7 +4,7 @@ const mutex = new Mutex();
 
 const closeError = new Error("The socket was closed");
 
-export class WebSocketConnection {
+export class WS {
   private closed: boolean;
   private stream: Buffer;
   private canRead?: boolean | Promise<boolean>;

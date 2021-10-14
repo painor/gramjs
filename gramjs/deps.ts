@@ -29,3 +29,5 @@ export {
 export { crypto } from "https://cdn.skypack.dev/@stagas/webcrypto-liner";
 
 export { default as struct } from "http://esm.sh/@trungduy1995nd/python-struct";
+
+export const isBrowser = typeof Deno === undefined;

@@ -1,6 +1,62 @@
 import * as crypto from "./crypto.ts";
 import { bigInt, BigInteger, Buffer } from "./deps.ts";
 
+export function readBufferFromBigInt(
+  bigIntVar: BigInteger,
+  bytesNumber: number,
+  little = true,
+  signed = false,
+): Buffer {
+  bigIntVar = bigInt(bigIntVar);
+  const bitLength = bigIntVar.bitLength().toJSNumber();
+
+  const bytes = Math.ceil(bitLength / 8);
+  if (bytesNumber < bytes) {
+    throw new Error("OverflowError: int too big to convert");
+  }
+  if (!signed && bigIntVar.lesser(BigInt(0))) {
+    throw new Error("Cannot convert to unsigned");
+  }
+  let below = false;
+  if (bigIntVar.lesser(BigInt(0))) {
+    below = true;
+    bigIntVar = bigIntVar.abs();
+  }
+
+  const hex = bigIntVar.toString(16).padStart(bytesNumber * 2, "0");
+  let littleBuffer = Buffer.from(hex, "hex");
+  if (little) {
+    littleBuffer = littleBuffer.reverse() as Buffer;
+  }
+
+  if (signed && below) {
+    if (little) {
+      let reminder = false;
+      if (littleBuffer[0] !== 0) {
+        littleBuffer[0] -= 1;
+      }
+      for (let i = 0; i < littleBuffer.length; i++) {
+        if (littleBuffer[i] === 0) {
+          reminder = true;
+          continue;
+        }
+        if (reminder) {
+          littleBuffer[i] -= 1;
+          reminder = false;
+        }
+        littleBuffer[i] = 255 - littleBuffer[i];
+      }
+    } else {
+      littleBuffer[littleBuffer.length - 1] = 256 -
+        littleBuffer[littleBuffer.length - 1];
+      for (let i = 0; i < littleBuffer.length - 1; i++) {
+        littleBuffer[i] = 255 - littleBuffer[i];
+      }
+    }
+  }
+  return littleBuffer;
+}
+
 export function serializeDate(dt: number | Date) {
   if (!dt) {
     return Buffer.alloc(4).fill(0);

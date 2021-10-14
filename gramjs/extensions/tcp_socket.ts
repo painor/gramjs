@@ -4,7 +4,7 @@ const mutex = new Mutex();
 
 const closeError = new Error("The socket was closed");
 
-export class TCPSocketConnection {
+export class TCPSocket {
   private client?: Client;
   private closed: boolean;
   private stream: Buffer;
