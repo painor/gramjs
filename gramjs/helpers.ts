@@ -1,4 +1,4 @@
-import * as crypto from "./crypto.ts";
+import * as crypto from "./crypto/mod.ts";
 import { bigInt, BigInteger, Buffer } from "./deps.ts";
 
 export function readBufferFromBigInt(
