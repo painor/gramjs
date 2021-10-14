@@ -1,10 +1,10 @@
-import type { EventBuilder } from "../events/common";
+import type { EventBuilder } from "../events/common.ts";
 import { Api } from "../tl/mod.ts";
-import type { TelegramClient } from "../";
+import type { TelegramClient } from "../mod.ts";
 import { bigInt } from "https://deno.land/x/biginteger/mod.ts";
-import { UpdateConnectionState } from "../network";
-import type { Raw } from "../events";
-import { utils } from "../index";
+import { UpdateConnectionState } from "../network/mod.ts";
+import type { Raw } from "../events/mod.ts";
+import { utils } from "../mod.ts";
 import { getRandomInt, sleep } from "../Helpers.ts";
 
 const PING_INTERVAL = 3000; // 3 sec

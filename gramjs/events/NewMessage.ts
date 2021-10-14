@@ -3,12 +3,12 @@ import {
     DefaultEventInterface,
     EventBuilder,
     EventCommon,
-} from "./common";
+} from "./common.ts";
 import type { Entity, EntityLike } from "../define.d.ts";
-import type { TelegramClient } from "..";
+import type { TelegramClient } from "../mod.ts";
 import { Api } from "../tl/mod.ts";
-import { Message } from "../tl/patched";
-import type { Message as CustomMessage } from "../tl/custom/message";
+import { Message } from "../tl/patched/mod.ts";
+import type { Message as CustomMessage } from "../tl/custom/message.ts";
 
 export interface NewMessageInterface extends DefaultEventInterface {
     func?: { (event: NewMessageEvent): boolean };

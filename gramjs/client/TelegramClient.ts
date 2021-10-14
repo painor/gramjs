@@ -1,17 +1,20 @@
-import { TelegramBaseClient, TelegramClientParams } from "./telegramBaseClient";
+import {
+    TelegramBaseClient,
+    TelegramClientParams,
+} from "./telegramBaseClient.ts";
 
-import * as authMethods from "./auth";
-import * as botMethods from "./bots";
-import * as buttonsMethods from "./buttons";
-import * as downloadMethods from "./downloads";
-import * as parseMethods from "./messageParse";
-import * as messageMethods from "./messages";
-import * as updateMethods from "./updates";
-import * as uploadMethods from "./uploads";
-import * as userMethods from "./users";
-import * as chatMethods from "./chats";
-import * as dialogMethods from "./dialogs";
-import * as twoFA from "./2fa";
+import * as authMethods from "./auth.ts";
+import * as botMethods from "./bots.ts";
+import * as buttonsMethods from "./buttons.ts";
+import * as downloadMethods from "./downloads.ts";
+import * as parseMethods from "./messageParse.ts";
+import * as messageMethods from "./messages.ts";
+import * as updateMethods from "./updates.ts";
+import * as uploadMethods from "./uploads.ts";
+import * as userMethods from "./users.ts";
+import * as chatMethods from "./chats.ts";
+import * as dialogMethods from "./dialogs.ts";
+import * as twoFA from "./2fa.ts";
 import type {
     ButtonLike,
     Entity,

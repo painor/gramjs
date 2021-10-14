@@ -1,10 +1,10 @@
 import { Api } from "../tl/mod.ts";
 import type { Entity, EntityLike } from "../define.d.ts";
-import { ChatGetter } from "../tl/custom";
-import type { TelegramClient } from "..";
+import { ChatGetter } from "../tl/custom/mod.ts";
+import type { TelegramClient } from "../mod.ts";
 
 import { isArrayLike } from "../Helpers.ts";
-import { utils } from "../";
+import { utils } from "../mod.ts";
 
 /** @hidden */
 export async function _intoIdSet(

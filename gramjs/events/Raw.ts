@@ -1,5 +1,5 @@
-import { EventBuilder, EventCommon } from "./common";
-import type { TelegramClient } from "..";
+import { EventBuilder, EventCommon } from "./common.ts";
+import type { TelegramClient } from "../mod.ts";
 import { Api } from "../tl/mod.ts";
 
 export interface RawInterface {

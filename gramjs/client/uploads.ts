@@ -1,7 +1,7 @@
 import { Api } from "../tl/mod.ts";
-import { Message } from "../tl/custom/message";
+import { Message } from "../tl/custom/message.ts";
 
-import { TelegramClient } from "./TelegramClient";
+import { TelegramClient } from "./TelegramClient.ts";
 import {
     generateRandomBytes,
     readBigIntFromBuffer,
