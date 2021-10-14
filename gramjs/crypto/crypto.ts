@@ -1,12 +1,13 @@
-import { default as AES } from "@cryptography/aes";
+import { AES } from "https://deno.land/x/god_crypto/aes.ts";
 import { i2ab, ab2i } from "./converters.ts";
 import { getWords } from "./words.ts";
+import { Buffer } from "https://deno.land/std@0.111.0/io/buffer.ts";
 
 export class Counter {
-    _counter: Buffer;
+    _counter: Uint8Array;
 
     constructor(initialValue: any) {
-        this._counter = Buffer.from(initialValue);
+        this._counter = new Buffer(initialValue).bytes();
     }
 
     increment() {
@@ -23,7 +24,7 @@ export class Counter {
 
 export class CTR {
     private _counter: Counter;
-    private _remainingCounter?: Buffer;
+    private _remainingCounter?: Uint8Array;
     private _remainingCounterIndex: number;
     private _aes: AES;
 
@@ -37,21 +38,29 @@ export class CTR {
         this._remainingCounter = undefined;
         this._remainingCounterIndex = 16;
 
-        this._aes = new AES(getWords(key));
+        this._aes = new AES(new Uint8Array(getWords(key.bytes()).buffer));
     }
 
     update(plainText: any) {
         return this.encrypt(plainText);
     }
 
-    encrypt(plainText: any) {
-        const encrypted = Buffer.from(plainText);
+    async encrypt(plainText: any) {
+        const encrypted = new Buffer(plainText).bytes();
 
         for (let i = 0; i < encrypted.length; i++) {
             if (this._remainingCounterIndex === 16) {
-                this._remainingCounter = Buffer.from(
-                    i2ab(this._aes.encrypt(ab2i(this._counter._counter)))
-                );
+                this._remainingCounter = new Buffer(
+                    i2ab(
+                        new Uint32Array(
+                            await this._aes.encrypt(
+                                new Uint8Array(
+                                    ab2i(this._counter._counter).buffer
+                                )
+                            )
+                        )
+                    )
+                ).bytes();
                 this._remainingCounterIndex = 0;
                 this._counter.increment();
             }
@@ -83,7 +92,7 @@ export function createCipheriv(algorithm: string, key: Buffer, iv: Buffer) {
 }
 
 export function randomBytes(count: Buffer) {
-    const bytes = new Uint8Array(count);
+    const bytes = count.bytes();
     crypto.getRandomValues(bytes);
     return bytes;
 }
@@ -99,17 +108,17 @@ export class Hash {
     update(data: Buffer) {
         //We shouldn't be needing new Uint8Array but it doesn't
         //work without it
-        this.data = new Uint8Array(data);
+        this.data = data.bytes();
     }
 
     async digest() {
         if (this.data) {
             if (this.algorithm === "sha1") {
-                return Buffer.from(
+                return new Buffer(
                     await self.crypto.subtle.digest("SHA-1", this.data)
                 );
             } else if (this.algorithm === "sha256") {
-                return Buffer.from(
+                return new Buffer(
                     await self.crypto.subtle.digest("SHA-256", this.data)
                 );
             }
@@ -125,7 +134,7 @@ export async function pbkdf2Sync(password: any, salt: any, iterations: any) {
         false,
         ["deriveBits"]
     );
-    return Buffer.from(
+    return new Buffer(
         await crypto.subtle.deriveBits(
             {
                 name: "PBKDF2",
