@@ -1,3 +1,5 @@
+/// <reference path="./api.d.ts" />
+
 import {
   generateRandomBytes,
   isArrayLike,
@@ -34,7 +36,8 @@ const AUTO_CASTS = new Set([
 class CastError extends Error {
   constructor(objectName, expected, actual, ...params) {
     // Pass remaining arguments (including vendor specific ones) to parent constructor
-    const message = "Found wrong type for " +
+    const message =
+      "Found wrong type for " +
       objectName +
       ". expected " +
       expected +
@@ -81,9 +84,8 @@ function loadFromCache() {
 
 function loadFromTlSchemas() {
   const [constructorParamsApi, functionParamsApi] = extractParams(tlContent);
-  const [constructorParamsSchema, functionParamsSchema] = extractParams(
-    schemeContent,
-  );
+  const [constructorParamsSchema, functionParamsSchema] =
+    extractParams(schemeContent);
   const constructors = [].concat(constructorParamsApi, constructorParamsSchema);
   const requests = [].concat(functionParamsApi, functionParamsSchema);
   return [].concat(constructors, requests);
@@ -222,7 +224,8 @@ function compareType(value, type) {
       correct = typeof value === type;
       break;
     case "bigInt":
-      correct = bigInt.isInstance(value) ||
+      correct =
+        bigInt.isInstance(value) ||
         typeof value === "bigint" ||
         value === undefined;
       break;
@@ -233,9 +236,10 @@ function compareType(value, type) {
       correct = Buffer.isBuffer(value);
       break;
     case "date":
-      correct = (value &&
-        Object.prototype.toString.call(value) === "[object Date]" &&
-        !isNaN(value)) ||
+      correct =
+        (value &&
+          Object.prototype.toString.call(value) === "[object Date]" &&
+          !isNaN(value)) ||
         typeof value === "number";
       break;
     default:
@@ -411,10 +415,8 @@ function createClasses(classesType, params) {
               buffers.push(
                 l,
                 Buffer.concat(
-                  this[arg].map((x) =>
-                    argToBytes(x, argsConfig[arg].type, arg)
-                  ),
-                ),
+                  this[arg].map((x) => argToBytes(x, argsConfig[arg].type, arg))
+                )
               );
             } else if (argsConfig[arg].flagIndicator) {
               if (!Object.values(argsConfig).some((f) => f.isFlag)) {
@@ -443,7 +445,7 @@ function createClasses(classesType, params) {
 
               if (this[arg] && typeof this[arg].getBytes === "function") {
                 let boxed = argsConfig[arg].type.charAt(
-                  argsConfig[arg].type.indexOf(".") + 1,
+                  argsConfig[arg].type.indexOf(".") + 1
                 );
                 boxed = boxed === boxed.toUpperCase();
                 if (!boxed) {
@@ -490,7 +492,7 @@ function createClasses(classesType, params) {
             if (!AUTO_CASTS.has(argsConfig[arg].type)) {
               if (
                 !NAMED_AUTO_CASTS.has(
-                  `${argsConfig[arg].name},${argsConfig[arg].type}`,
+                  `${argsConfig[arg].name},${argsConfig[arg].type}`
                 )
               ) {
                 continue;
@@ -509,8 +511,8 @@ function createClasses(classesType, params) {
                     utils,
                     client,
                     x,
-                    argsConfig[arg].type,
-                  ),
+                    argsConfig[arg].type
+                  )
                 );
               }
               this[arg] = temp;
@@ -519,7 +521,7 @@ function createClasses(classesType, params) {
                 utils,
                 client,
                 this[arg],
-                argsConfig[arg].type,
+                argsConfig[arg].type
               );
             }
           }
